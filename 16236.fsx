@@ -4,8 +4,7 @@ open System.Collections.Generic
 let N = Console.ReadLine() |> int
 
 let map =
-    Array.init N (fun _ ->
-        Console.ReadLine().Split() |> Array.map int)
+    Array.init N (fun _ -> Console.ReadLine().Split() |> Array.map int)
 
 let mutable size = 2
 let mutable stack = 0
@@ -43,31 +42,19 @@ while queue.Count > 0 do
 
         visited[y][x] <- true
 
-    if
-        x > 0 && map[y][x - 1] <= size && not (visited[y][x - 1])
-    then
+    if x > 0 && map[y][x - 1] <= size && not (visited[y][x - 1]) then
         queue.Enqueue((x - 1, y, d + 1), (d + 1, y, x - 1))
         visited[y][x - 1] <- true
 
-    if
-        x < N - 1
-        && map[y][x + 1] <= size
-        && not (visited[y][x + 1])
-    then
+    if x < N - 1 && map[y][x + 1] <= size && not (visited[y][x + 1]) then
         queue.Enqueue((x + 1, y, d + 1), (d + 1, y, x + 1))
         visited[y][x + 1] <- true
 
-    if
-        y > 0 && map[y - 1][x] <= size && not (visited[y - 1][x])
-    then
+    if y > 0 && map[y - 1][x] <= size && not (visited[y - 1][x]) then
         queue.Enqueue((x, y - 1, d + 1), (d + 1, y - 1, x))
         visited[y - 1][x] <- true
 
-    if
-        y < N - 1
-        && map[y + 1][x] <= size
-        && not (visited[y + 1][x])
-    then
+    if y < N - 1 && map[y + 1][x] <= size && not (visited[y + 1][x]) then
         queue.Enqueue((x, y + 1, d + 1), (d + 1, y + 1, x))
         visited[y + 1][x] <- true
 

@@ -7,8 +7,7 @@ let m = Console.ReadLine() |> int
 let vertexes = Array.init (n + 1) (fun _ -> [])
 
 for _ in 1..m do
-    let [| s; e; x |] =
-        Console.ReadLine().Split() |> Array.map int
+    let [| s; e; x |] = Console.ReadLine().Split() |> Array.map int
 
     vertexes[s] <- (e, x) :: vertexes[s]
 
