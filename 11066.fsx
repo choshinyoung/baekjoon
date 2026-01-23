@@ -18,4 +18,4 @@ for _ in 1..T do
                 let cost = dp[i, k] + dp[k + 1, j] + sum
                 dp[i, j] <- min dp[i, j] cost
 
-    printfn "%A" dp[0, n - 1]
+    printfn "%d" dp[0, n - 1]
