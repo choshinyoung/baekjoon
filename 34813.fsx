@@ -1,0 +1,1 @@
+["Claves";"Veritas";"Exploration";"Foundation"][stdin.Read()%9-4]|>printf"%s"
