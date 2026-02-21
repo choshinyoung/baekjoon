@@ -1,5 +1,3 @@
-open System
-
 let [| n; m |] = stdin.ReadLine().Split() |> Array.map int
 
 let board = Array.init n (fun _ -> stdin.ReadLine())
