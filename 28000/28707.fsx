@@ -15,7 +15,7 @@ stdin.ReadLine() |> ignore
 let a = stdin.ReadLine().Split() |> Array.map int |> Array.toList
 let m = stdin.ReadLine() |> int
 
-let vertextes =
+let vertexes =
     Array.init m (fun _ -> stdin.ReadLine().Split() |> Array.map int)
 
 let distance = Dictionary<int list, int>()
@@ -28,7 +28,7 @@ while queue.Count > 0 do
     let current, cost = queue.Dequeue()
 
     if cost <= distance.GetValueOrDefault(current, INF) then
-        for [| l; r; c |] in vertextes do
+        for [| l; r; c |] in vertexes do
             let next = current |> swap l r
             let cost' = cost + c
 
